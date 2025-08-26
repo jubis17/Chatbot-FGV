@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/hello")
 def hello():
-    return "meu pau"
+    return 'ola'
