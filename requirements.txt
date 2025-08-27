@@ -1,11 +1,1 @@
 fastapi
-uvicorn
-python-telegram-bot
-requests
-beautifulsoup4
-pdfplumber
-sentence-transformers
-chromadb
-sqlalchemy
-python-dotenv
-icalendar
