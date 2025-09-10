@@ -18,7 +18,14 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 if not TELEGRAM_TOKEN:
     raise RuntimeError("Faltou TELEGRAM_TOKEN no arquivo .env")
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user  # pega os dados do usuário que chamou o comando
     await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 Eu sou o assistente FGV.\n" 
                                     "Use /help para ver os comandos disponíveis.")
+def main():
+    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    app.run_polling(close_loop=False)
+
+if __name__ == "__main__":
+    main()
