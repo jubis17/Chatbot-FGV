@@ -1,6 +1,8 @@
 import os
 import logging
 from dotenv import load_dotenv
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # Configura o logger para vermos mensagens no terminal
 logging.basicConfig(
@@ -16,4 +18,7 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 if not TELEGRAM_TOKEN:
     raise RuntimeError("Faltou TELEGRAM_TOKEN no arquivo .env")
 
-print("TOKEN carregado:", TELEGRAM_TOKEN)
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    user = update.effective_user  # pega os dados do usuário que chamou o comando
+    await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 Eu sou o assistente FGV.\n" 
+                                    "Use /help para ver os comandos disponíveis.")
