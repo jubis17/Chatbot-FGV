@@ -1,7 +1,7 @@
 import os
 import logging
 from dotenv import load_dotenv
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # Configura o logger para vermos mensagens no terminal
@@ -20,8 +20,16 @@ if not TELEGRAM_TOKEN:
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user  # pega os dados do usuário que chamou o comando
-    await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 Eu sou o assistente FGV.\n" 
-                                    "Use /help para ver os comandos disponíveis.")
+    texto = f"Olá, {user.first_name or 'aluno(a)'}! 👋 Eu sou o assistente FGV.\n" "Minha função é tirar suas dúvidas sobre os processos internos da FGV.\n\n""Para começar, sobre o que é sua dúvida?"
+    botoes = [[InlineKeyboardButton("Financeiro", callback_data="FINANCEIRO")],
+        [InlineKeyboardButton("Acadêmico", callback_data="ACADEMICO")],
+        [InlineKeyboardButton("Administrativo", callback_data="ADMIN")],
+        [InlineKeyboardButton("Estágio", callback_data="ESTAGIO")],
+        [InlineKeyboardButton("Outros", callback_data="OUTROS")],
+        [InlineKeyboardButton("Falar com a secretaria", callback_data="SECRETARIA")]]
+    teclado = InlineKeyboardMarkup(botoes)
+    await update.message.reply_text(texto, reply_markup=teclado)
+
 def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
