@@ -40,9 +40,12 @@ MAPA = {
             "Ok, sua dúvida é sobre 'Financeiro'. O que você quer saber, mais especificamente?"
         ),
         "teclado": criar_teclado([
-            ("Pagamento de boleto", "FINANCEIRO/BOLETO"),
-            ("Solicitação de bolsa de estudos", "FINANCEIRO/BOLSA"),
+            ("Cobranças a pagar", "FINANCEIRO/COBRANCAS"),
+            ("Bolsa de estudos", "FINANCEIRO/BOLSA"),
             ("Bilhete de transporte", "FINANCEIRO/BILHETE"),
+            ("Informe de Pagamentos/Nota Fiscal", "FINANCEIRO/INFORME"),
+            ("Alterar responsável financeiro", "FINANCEIRO/RESPONSAVEL"),
+            ("Outros", "FINANCEIRO/OUTROS"),
             ("Voltar", "ROOT"),
         ])
     },
