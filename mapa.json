@@ -1,0 +1,25 @@
+{
+  "ROOT": {
+    "texto": "Olá, sou o assistente virtual desenvolvido pela GVCODE.\nMinha função é tirar suas dúvidas sobre os processos internos da FGV.\n\nPara começar, sobre o que é sua dúvida?",
+    "opcoes": [
+      ["Financeiro", "FINANCEIRO"],
+      ["Acadêmico", "ACADEMICO"],
+      ["Administrativo", "ADMIN"],
+      ["Estágio", "ESTAGIO"],
+      ["Outros", "OUTROS"],
+      ["Falar com a secretaria", "SECRETARIA"]
+    ]
+  },
+  "FINANCEIRO": {
+    "texto": "Ok, sua dúvida é sobre 'Financeiro'. O que você quer saber, mais especificamente?",
+    "opcoes": [
+      ["Cobranças a pagar", "FINANCEIRO/COBRANCAS"],
+      ["Bolsa de estudos", "FINANCEIRO/BOLSA"],
+      ["Bilhete de transporte", "FINANCEIRO/BILHETE"],
+      ["Informe de Pagamentos/Nota Fiscal", "FINANCEIRO/INFORME"],
+      ["Alterar responsável financeiro", "FINANCEIRO/RESPONSAVEL"],
+      ["Outros", "FINANCEIRO/OUTROS"],
+      ["Voltar", "ROOT"]
+    ]
+  }
+}
