@@ -1,5 +1,6 @@
 import os
 import logging
+import json
 from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
@@ -16,67 +17,83 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 if not TELEGRAM_TOKEN:
     raise RuntimeError("Faltou TELEGRAM_TOKEN no arquivo .env")
 
-def criar_teclado(opcoes):
-    return InlineKeyboardMarkup([[InlineKeyboardButton(txt, callback_data=data)] for txt, data in opcoes])
+def criar_teclado(node_key: str):
+    # copia os botões que já existem no nó
+    base_rows = MAPA[node_key]["opcoes"].inline_keyboard
+    rows = [[InlineKeyboardButton(btn.text, callback_data=btn.callback_data) for btn in row] for row in base_rows]
 
-MAPA = {
-    "ROOT": {
-        "texto": (
-            "Eu sou o assistente FGV.\n"
-            "Minha função é tirar suas dúvidas sobre os processos internos da FGV.\n\n"
-            "Para começar, sobre o que é sua dúvida?"
-        ),
-        "teclado": criar_teclado([
-            ("Financeiro", "FINANCEIRO"),
-            ("Acadêmico", "ACADEMICO"),
-            ("Administrativo", "ADMIN"),
-            ("Estágio", "ESTAGIO"),
-            ("Outros", "OUTROS"),
-            ("Falar com a secretaria", "SECRETARIA"),
-        ])
-    },
-    "FINANCEIRO": {
-        "texto": (
-            "Ok, sua dúvida é sobre 'Financeiro'. O que você quer saber, mais especificamente?"
-        ),
-        "teclado": criar_teclado([
-            ("Cobranças a pagar", "FINANCEIRO/COBRANCAS"),
-            ("Bolsa de estudos", "FINANCEIRO/BOLSA"),
-            ("Bilhete de transporte", "FINANCEIRO/BILHETE"),
-            ("Informe de Pagamentos/Nota Fiscal", "FINANCEIRO/INFORME"),
-            ("Alterar responsável financeiro", "FINANCEIRO/RESPONSAVEL"),
-            ("Outros", "FINANCEIRO/OUTROS"),
-            ("Voltar", "ROOT"),
-        ])
-    },
-}
+    # acrescenta navegação (exceto no ROOT)
+    if node_key != "ROOT":
+        rows.append([InlineKeyboardButton("Voltar", callback_data="VOLTAR")])
+        rows.append([InlineKeyboardButton("Home", callback_data="HOME")])
+
+    return InlineKeyboardMarkup(rows)
+
+def criar_mapa(opcoes):
+    return InlineKeyboardMarkup([
+        [InlineKeyboardButton(txt, callback_data=data)] 
+        for txt, data in opcoes
+    ])
+
+with open("mapa.json", "r", encoding="utf-8") as f:
+    mapa_json = json.load(f)
+
+MAPA = {}
+IDX = {}
+
+for chave, item in mapa_json.items():
+    MAPA[chave] = {"texto": item["texto"], "opcoes": criar_mapa(item["opcoes"])}
+    for txt, data in item["opcoes"]:
+        IDX[data] = txt
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.user_data["stack"] = ["ROOT"]
     user = update.effective_user  # pega os dados do usuário que chamou o comando
     item = MAPA["ROOT"]
-    await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 " + item["texto"], reply_markup=item["teclado"])
-
-def buscar_rotulo(callback):
-    for chave, item in MAPA.items():
-        for linha in item["teclado"].inline_keyboard:
-            for botao in linha:
-                if botao.callback_data == callback:
-                    return botao.text
-    return callback 
+    await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 " + item["texto"], reply_markup=item["opcoes"])
 
 async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer()
     chave = q.data
 
-    rotulo = buscar_rotulo(chave)
+    rotulo = IDX.get(chave, chave)
     await q.message.chat.send_message(f"Sua escolha: {rotulo}")
 
-    if chave in MAPA:
-        item = MAPA[chave]
-        
-        await q.message.reply_text(item["texto"], reply_markup=item["teclado"])
+    stack = context.user_data.get("stack", ["ROOT"])
+
+    if chave == "HOME":
+        stack = ["ROOT"]
+        context.user_data["stack"] = stack
+        item = MAPA["ROOT"]
+        await q.message.reply_text(item["texto"], reply_markup=criar_teclado("ROOT"))
         return
+
+    if chave == "VOLTAR":
+        if len(stack) > 1:
+            stack.pop()
+        chave = stack[-1]
+        context.user_data["stack"] = stack
+        item = MAPA[chave]
+        await q.message.reply_text(item["texto"], reply_markup=criar_teclado(chave))
+        return
+
+    if chave in MAPA:
+        stack.append(chave)
+        context.user_data["stack"] = stack
+        item = MAPA[chave]
+        await q.message.reply_text(item["texto"], reply_markup=criar_teclado(chave))
+        return
+    
+    else:
+    # nó não existe → mostra aviso
+        logging.warning(f"Nó ainda não implementado: {chave}")
+        await q.message.reply_text("Ops! Ainda não implementamos esta opção. Você pode voltar.",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Voltar", callback_data="VOLTAR")],
+            [InlineKeyboardButton("Home", callback_data="HOME")]
+        ])
+    )
 
 def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()

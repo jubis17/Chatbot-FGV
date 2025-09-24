@@ -19,7 +19,6 @@
       ["Informe de Pagamentos/Nota Fiscal", "FIN_INF"],
       ["Alterar responsável financeiro", "FIN_RESP"],
       ["Outros", "FIN_OUT"],
-      ["Voltar", "ROOT"]
     ]
   }
 }
