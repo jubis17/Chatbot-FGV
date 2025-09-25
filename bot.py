@@ -57,8 +57,9 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await q.answer()
     chave = q.data
 
-    rotulo = IDX.get(chave, chave)
-    await q.message.chat.send_message(f"Sua escolha: {rotulo}")
+    if chave not in ("HOME", "VOLTAR"):
+        rotulo = IDX.get(chave, chave)
+        await q.message.chat.send_message(f"Sua escolha: {rotulo}")
 
     stack = context.user_data.get("stack", ["ROOT"])
 
@@ -77,6 +78,9 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
         item = MAPA[chave]
         await q.message.reply_text(item["texto"], reply_markup=criar_teclado(chave))
         return
+
+    stack.append(chave)
+    context.user_data["stack"] = stack
 
     if chave in MAPA:
         stack.append(chave)
