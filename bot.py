@@ -3,7 +3,8 @@ import logging
 import json
 from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
+from telegram.ext import ApplicationBuilder, Application, CommandHandler, ContextTypes, CallbackQueryHandler
+from fastapi import FastAPI, Request, HTTPException
 
 # Configura o logger para vermos mensagens no terminal
 logging.basicConfig(format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
@@ -91,9 +92,6 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await q.message.reply_text(item["texto"], reply_markup=criar_teclado(chave))
         return
 
-    stack.append(chave)
-    context.user_data["stack"] = stack
-
     if chave in MAPA:
         stack.append(chave)
         context.user_data["stack"] = stack
@@ -103,6 +101,8 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     else:
         # nó não existe → mostra aviso
+        stack.append(chave)
+        context.user_data["stack"] = stack
         logging.warning(f"Nó ainda não implementado: {chave}")
         await q.message.reply_text("Ops! Ainda não implementamos esta opção. Você pode voltar.",
         reply_markup=InlineKeyboardMarkup([
