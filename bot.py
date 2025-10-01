@@ -15,9 +15,12 @@ load_dotenv()
 # Lê o token do bot (pego com o BotFather) do .env
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 if not TELEGRAM_TOKEN:
-    raise RuntimeError("Faltou TELEGRAM_TOKEN no arquivo .env")
+    raise RuntimeError("O token do Telegram não foi encontrado no arquivo .env. Verifique se a variável TELEGRAM_TOKEN está configurada corretamente.")
 
-def criar_teclado(node_key: str):
+def criar_teclado(node_key: str) -> InlineKeyboardMarkup:
+    """
+    Cria um teclado de navegação com as opções do nó especificado e botões de navegação.
+    """
     # copia os botões que já existem no nó
     base_rows = MAPA[node_key]["opcoes"].inline_keyboard
     rows = [[InlineKeyboardButton(btn.text, callback_data=btn.callback_data) for btn in row] for row in base_rows]
@@ -29,7 +32,10 @@ def criar_teclado(node_key: str):
 
     return InlineKeyboardMarkup(rows)
 
-def criar_mapa(opcoes):
+def criar_mapa(opcoes: list) -> InlineKeyboardMarkup:
+    """
+    Constrói um teclado com as opções fornecidas.
+    """
     return InlineKeyboardMarkup([
         [InlineKeyboardButton(txt, callback_data=data)] 
         for txt, data in opcoes
@@ -47,12 +53,18 @@ for chave, item in mapa_json.items():
         IDX[data] = txt
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Envia a mensagem inicial do bot com o menu principal.
+    """
     context.user_data["stack"] = ["ROOT"]
     user = update.effective_user  # pega os dados do usuário que chamou o comando
     item = MAPA["ROOT"]
     await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 " + item["texto"], reply_markup=item["opcoes"])
 
 async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Gerencia a navegação entre os nós do mapa com base nos cliques do usuário.
+    """
     q = update.callback_query
     await q.answer()
     chave = q.data
@@ -90,16 +102,19 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     else:
-    # nó não existe → mostra aviso
+        # nó não existe → mostra aviso
         logging.warning(f"Nó ainda não implementado: {chave}")
         await q.message.reply_text("Ops! Ainda não implementamos esta opção. Você pode voltar.",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("Voltar", callback_data="VOLTAR")],
             [InlineKeyboardButton("Home", callback_data="HOME")]
         ])
-    )
+        )
 
 def main():
+    """
+    Inicializa o bot, registra os handlers e inicia o polling.
+    """
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(tratar_clique))
