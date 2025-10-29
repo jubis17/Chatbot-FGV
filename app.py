@@ -10,9 +10,8 @@ import bot as mybot
 
 load_dotenv()
 
-
-
 WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
+PUBLIC_URL = os.getenv("PUBLIC_URL")
 if not WEBHOOK_SECRET:
     raise RuntimeError("A variável de ambiente WEBHOOK_SECRET não foi encontrada.")
 
@@ -26,10 +25,19 @@ async def lifespan(app: FastAPI):
     # Inicializa e inicia o bot quando o FastAPI sobe
     await telegram_app.initialize()
     await telegram_app.start()
-
+    if PUBLIC_URL:
+        await telegram_app.bot.set_webhook(
+            url=f"{PUBLIC_URL}/webhook/{WEBHOOK_SECRET}",
+            secret_token=WEBHOOK_SECRET,
+            allowed_updates=["message", "callback_query"],
+        )
     try:
         yield
     finally:
+        try:
+            await telegram_app.bot.delete_webhook()
+        except Exception:
+            pass
         # Para e encerra limpo quando servidor desliga
         await telegram_app.stop()
         await telegram_app.shutdown()

@@ -7,7 +7,7 @@ load_dotenv()
 AUTHTOKEN = os.getenv("NGROK_AUTH_TOKEN")
 
 # 1) cole seu token aqui
-conf.get_default().auth_token = "AUTHTOKEN"
+conf.get_default().auth_token = AUTHTOKEN
 
 
 # 2) abre túnel HTTPS para o FastAPI em 8000
