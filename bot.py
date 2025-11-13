@@ -20,27 +20,27 @@ if not TELEGRAM_TOKEN:
 
 def criar_teclado(node_key: str) -> InlineKeyboardMarkup:
     """
-    Cria um teclado de navegação com as opções do nó especificado e botões de navegação.
+    Monta o teclado do nó a partir de opcoes_raw e acrescenta Voltar/Home
+    para todos os nós exceto ROOT.
+    Suporta tanto callback_data quanto botões de URL.
     """
-    # copia os botões que já existem no nó
-    base_rows = MAPA[node_key]["opcoes"].inline_keyboard
-    rows = [[InlineKeyboardButton(btn.text, callback_data=btn.callback_data) for btn in row] for row in base_rows]
+    rows = []
+    for label, target in MAPA[node_key].get("opcoes_raw", []):
+        if isinstance(target, dict) and "url" in target:
+            rows.append([InlineKeyboardButton(label, url=target["url"])])
+        else:
+            # aceita string direta ("FIN_COBR") ou dict com action/goto
+            if isinstance(target, str):
+                data = target
+            else:
+                data = target.get("action") or target.get("goto") or "ROOT"
+            rows.append([InlineKeyboardButton(label, callback_data=data)])
 
-    # acrescenta navegação (exceto no ROOT)
     if node_key != "ROOT":
         rows.append([InlineKeyboardButton("Voltar", callback_data="VOLTAR")])
         rows.append([InlineKeyboardButton("Home", callback_data="HOME")])
 
     return InlineKeyboardMarkup(rows)
-
-def criar_mapa(opcoes: list) -> InlineKeyboardMarkup:
-    """
-    Constrói um teclado com as opções fornecidas.
-    """
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton(txt, callback_data=data)] 
-        for txt, data in opcoes
-    ])
 
 with open("mapa.json", "r", encoding="utf-8") as f:
     mapa_json = json.load(f)
@@ -49,9 +49,52 @@ MAPA = {}
 IDX = {}
 
 for chave, item in mapa_json.items():
-    MAPA[chave] = {"texto": item["texto"], "opcoes": criar_mapa(item["opcoes"])}
-    for txt, data in item["opcoes"]:
-        IDX[data] = txt
+    MAPA[chave] = {
+        "texto": item["texto"],
+        "itens": item.get("itens", []),
+        "opcoes_raw": item.get("opcoes", [])  # <- guardamos as opções cruas
+    }
+    # popular índice de rótulos (só para callbacks; URLs não entram aqui)
+    for opt in MAPA[chave]["opcoes_raw"]:
+        label, target = opt
+        if isinstance(target, str):
+            IDX[target] = label
+        elif isinstance(target, dict):
+            cb = target.get("action") or target.get("goto")
+            if cb:
+                IDX[cb] = label
+
+async def enviar_node(chat, node_key):
+    """
+    Envia todo o conteúdo de um nó (texto, notas, links, arquivos, etc.)
+    seguido do teclado de navegação.
+    """
+    if node_key not in MAPA:
+        await chat.send_message("Ops! Essa opção ainda não está disponível.")
+        return
+
+    item = MAPA[node_key]
+
+    # Texto principal do nó
+    await chat.send_message(item["texto"])
+
+    # Conteúdo complementar (itens)
+    for bloco in item.get("itens", []):
+        tipo = bloco.get("tipo")
+
+        if tipo == "nota":
+            await chat.send_message(bloco["conteudo"])
+
+        elif tipo == "link":
+            kb = InlineKeyboardMarkup(
+                [[InlineKeyboardButton(bloco["titulo"], url=bloco["url"])]]
+            )
+            await chat.send_message("Link:", reply_markup=kb)
+
+    # Botões de navegação no final
+    await chat.send_message(
+        "Escolha uma opção:", reply_markup=criar_teclado(node_key)
+    )
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
@@ -59,9 +102,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
     context.user_data["stack"] = ["ROOT"]
     user = update.effective_user  # pega os dados do usuário que chamou o comando
-    item = MAPA["ROOT"]
-    await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋 " + item["texto"], reply_markup=item["opcoes"])
-
+    await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋")
+    await enviar_node(update.message.chat, "ROOT")
+    
 async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
     Gerencia a navegação entre os nós do mapa com base nos cliques do usuário.
@@ -80,7 +123,7 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
         stack = ["ROOT"]
         context.user_data["stack"] = stack
         item = MAPA["ROOT"]
-        await q.message.reply_text(item["texto"], reply_markup=criar_teclado("ROOT"))
+        await enviar_node(q.message.chat, "ROOT")
         return
 
     if chave == "VOLTAR":
@@ -89,14 +132,18 @@ async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chave = stack[-1]
         context.user_data["stack"] = stack
         item = MAPA[chave]
-        await q.message.reply_text(item["texto"], reply_markup=criar_teclado(chave))
+        await enviar_node(q.message.chat, chave)
+        return
+
+    if chave == "SECRETARIA":
+        await q.message.reply_text("Ok! Vou te conectar com a secretaria. Envie seu nome completo e R.A. aqui que eu repasso.")
         return
 
     if chave in MAPA:
         stack.append(chave)
         context.user_data["stack"] = stack
         item = MAPA[chave]
-        await q.message.reply_text(item["texto"], reply_markup=criar_teclado(chave))
+        await enviar_node(q.message.chat, chave)
         return
     
     else:

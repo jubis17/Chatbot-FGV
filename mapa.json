@@ -1,0 +1,78 @@
+{
+  "ROOT": {
+    "texto": "Sou o assistente virtual desenvolvido pela GVCODE.\nMinha função é tirar suas dúvidas sobre os processos internos da FGV.\n\nPara começar, sobre o que é sua dúvida?",
+    "opcoes": [
+      ["Financeiro", "FINANCEIRO"],
+      ["Acadêmico", "ACADEMICO"],
+      ["Administrativo", "ADMIN"],
+      ["Estágio", "ESTAGIO"],
+      ["Infraestrutura", "INFRA"],
+      ["Outros", "OUTROS"],
+      ["Falar com a secretaria", "SECRETARIA"]
+    ]
+  },
+
+  "FINANCEIRO": {
+    "texto": "Ok, sua dúvida é sobre 'Financeiro'. O que você quer saber, mais especificamente?",
+    "opcoes": [
+      ["Cobranças a pagar", "FIN_COBR"],
+      ["Bolsa de estudos", "FIN_BOLSA"],
+      ["Bilhete de transporte", "FIN_BILH"],
+      ["Informe de Pagamentos / Nota Fiscal", "FIN_INF"],
+      ["Outros", "FIN_OUT"]
+    ]
+  },
+
+  "FIN_COBR": {
+    "texto": "Ok, você quer saber sobre 'Cobranças a pagar'.",
+    "itens": [
+      {
+        "tipo": "nota",
+        "conteudo": "Para acessar suas cobranças pendentes, entre no Aluno Online → Financeiro → Cobranças a pagar."
+      },
+      {
+        "tipo": "link",
+        "titulo": "Acessar Aluno Online",
+        "url": "https://aluno-online-sp.fgv.br/"
+      },
+      {
+        "tipo": "nota",
+        "conteudo": "Para solicitar segunda via de boleto, entre no Portal de Serviços → Solicitações Financeiras → 2ª Via de Boleto."
+      },
+      {
+        "tipo": "link",
+        "titulo": "Acessar Portal de Serviços",
+        "url": "https://servicosacad.fgv.br/"
+      },
+      {
+        "tipo": "nota",
+        "conteudo": "Se ainda tiver dúvidas ou precisar de atendimento, selecione 'Falar com a secretaria'."
+      }
+    ],
+    "opcoes": [
+      ["Falar com a secretaria", "SECRETARIA"]
+    ]
+  },
+
+  "FIN_INF": {
+    "texto": "Ok, você quer saber sobre 'Informe de Pagamentos / Nota Fiscal'.",
+    "itens": [
+      {
+        "tipo": "nota",
+        "conteudo": "Para ver suas declarações, entre no Aluno Online → Financeiro → Declaração de Pagamentos (Ano atual/Anterior)."
+      },
+      {
+        "tipo": "link",
+        "titulo": "Acessar Aluno Online",
+        "url": "https://aluno-online-sp.fgv.br/"
+      },
+      {
+        "tipo": "nota",
+        "conteudo": "Se ainda tiver dúvidas ou quiser atendimento, selecione 'Falar com a secretaria'."
+      }
+    ],
+    "opcoes": [
+      ["Falar com a secretaria", "SECRETARIA"]
+    ]
+  }
+}
