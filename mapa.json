@@ -26,14 +26,14 @@
   "ACADEMICO": {
     "texto": "Ok, sua dúvida é sobre 'Acadêmico'. O que você quer saber, mais especificamente?",
     "opcoes": [
-      ["Calendário", "ACAD_CALEND"],
-      ["Prova de segunda chamada", "ACAD_SEGUNDA"],
-      ["Prova REAVAL", "ACAD_REAVAL"],
-      ["Entidades e Coletivos", "ACAD_ENTID"],
-      ["Syllabus de matérias", "ACAD_SYLLABUS"],
-      ["TCC", "ACAD_TCC"],
-      ["Imersão / Semana Concentrada", "ACAD_IMERSAO"],
-      ["Monitoria", "ACAD_MONITORIA"]
+      ["Calendário", "ACA_CALEND"],
+      ["Prova de segunda chamada", "ACA_SEGCHAM"],
+      ["Prova REAVAL", "ACA_REAVAL"],
+      ["Entidades e Coletivos", "ACA_ENTID"],
+      ["Syllabus de matérias", "ACA_SYLL"],
+      ["TCC", "ACA_TCC"],
+      ["Imersão / Semana Concentrada", "ACA_IMERSAO"],
+      ["Monitoria", "ACA_MONIT"]
     ]
   },
 
