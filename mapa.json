@@ -19,7 +19,7 @@
       ["Bolsa de estudos", "FIN_BOLSA"],
       ["Bilhete de transporte", "FIN_BILH"],
       ["Informe de Pagamentos / Nota Fiscal", "FIN_INF"],
-      ["Outros", "FIN_OUT"],
+      ["Outros", "FIN_OUT"]
     ]
   },
 
@@ -33,7 +33,7 @@
       ["Syllabus de matérias", "ACAD_SYLLABUS"],
       ["TCC", "ACAD_TCC"],
       ["Imersão / Semana Concentrada", "ACAD_IMERSAO"],
-      ["Monitoria", "ACAD_MONITORIA"],
+      ["Monitoria", "ACAD_MONITORIA"]
     ]
   },
 
@@ -48,7 +48,7 @@
       ["Cancelamento de disciplina", "ADM_CANCEL"],
       ["Histórico escolar", "ADM_HIST"],
       ["Declarações e atestados acadêmicos", "ADM_DECLAR"],
-      ["Outros", "ADM_OUTROS"],
+      ["Outros", "ADM_OUTROS"]
     ]
   },
 
@@ -57,7 +57,7 @@
     "opcoes": [
       ["Validação de horas de estágio", "EST_HORAS"],
       ["Centro de carreiras", "EST_CARREIRAS"],
-      ["Documentos de estágio", "EST_DOCS"],
+      ["Documentos de estágio", "EST_DOCS"]
     ]
   },
 
@@ -67,7 +67,7 @@
       ["9 de Julho 2029 / Itapeva 432 (Administração de Empresas)", "INF_9J"],
       ["Plínio Barreto 365 (Direito e Economia)", "INF_PB"],
       ["Picarolo 63 (Administração de Empresas)", "INF_PIC"],
-      ["Itapeva 474 (Relações Internacionais)", "INF_474"],
+      ["Itapeva 474 (Relações Internacionais)", "INF_474"]
     ]
   },
 
@@ -76,7 +76,7 @@
     "opcoes": [
       ["Guarda religiosa", "OUT_GUARDA"],
       ["Regime excepcional de estudos", "OUT_REE"],
-      ["Recursos TIC", "OUT_TIC"],
+      ["Recursos TIC", "OUT_TIC"]
     ]
   },
 
