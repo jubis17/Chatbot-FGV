@@ -3,7 +3,7 @@ import logging
 import json
 from dotenv import load_dotenv
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, Application, CommandHandler, ContextTypes, CallbackQueryHandler
+from telegram.ext import ApplicationBuilder, Application, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
 from fastapi import FastAPI, Request, HTTPException
 
 # Configura o logger para vermos mensagens no terminal
@@ -104,6 +104,25 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user  # pega os dados do usuário que chamou o comando
     await update.message.reply_text(f"Olá, {user.first_name or 'aluno(a)'}! 👋")
     await enviar_node(update.message.chat, "ROOT")
+
+async def qualquer_mensagem(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Para qualquer mensagem de texto que NÃO seja comando (/algo),
+    se o usuário ainda não passou pelo /start, iniciamos o fluxo.
+    """
+    # Garante que só trata mensagens normais (não callback, etc.)
+    if update.message is None:
+        return
+
+    # Se o usuário ainda não tem stack, é como se fosse o /start
+    if "stack" not in context.user_data:
+        await start(update, context)
+    else:
+        # Aqui você decide o que fazer com mensagens depois de já ter iniciado.
+        # Pode só avisar que é pra usar o menu:
+        await update.message.reply_text(
+            "Use os botões do menu abaixo pra navegar 😊"
+        )
     
 async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
@@ -165,6 +184,7 @@ def main():
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(tratar_clique))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, qualquer_mensagem))
     app.run_polling(close_loop=False)
 
 if __name__ == "__main__":
