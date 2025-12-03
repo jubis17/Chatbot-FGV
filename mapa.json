@@ -1,908 +1,1600 @@
 {
-  "ROOT": {
-    "texto": "Olá, sou o assistente virtual desenvolvido pela GVCODE. Minha função é tirar suas dúvidas sobre os processos internos da FGV.\n\nPara começar, sobre o que é sua dúvida?",
-    "opcoes": [
-      ["Financeiro", "FINANCEIRO"],
-      ["Acadêmico", "ACADEMICO"],
-      ["Administrativo", "ADMIN"],
-      ["Estágio", "ESTAGIO"],
-      ["Infraestrutura", "INFRA"],
-      ["Outros", "OUTROS"],
-      ["Falar com a secretaria", "SECRETARIA"]
-    ]
-  },
-
-  "FINANCEIRO": {
-    "texto": "Ok, sua dúvida é sobre 'Financeiro'. O que você quer saber, mais especificamente?",
-    "opcoes": [
-      ["Cobranças a pagar", "FIN_COBR"],
-      ["Bolsa de estudos", "FIN_BOLSA"],
-      ["Bilhete de transporte", "FIN_BILH"],
-      ["Informe de Pagamentos / Nota Fiscal", "FIN_INF"],
-      ["Outros", "FIN_OUT"]
-    ]
-  },
-
-  "ACADEMICO": {
-    "texto": "Ok, sua dúvida é sobre 'Acadêmico'. O que você quer saber, mais especificamente?",
-    "opcoes": [
-      ["Calendário", "ACA_CALEND"],
-      ["Prova de segunda chamada", "ACA_SEGCHAM"],
-      ["Prova REAVAL", "ACA_REAVAL"],
-      ["Entidades e Coletivos", "ACA_ENTID"],
-      ["Syllabus de matérias", "ACA_SYLL"],
-      ["TCC", "ACA_TCC"],
-      ["Imersão / Semana Concentrada", "ACA_IMERSAO"],
-      ["Monitoria", "ACA_MONIT"]
-    ]
-  },
-
-  "ADMIN": {
-    "texto": "Ok, sua dúvida é sobre 'Administrativo'. O que você quer saber, mais especificamente?",
-    "opcoes": [
-      ["Matrícula / Rematrícula", "ADM_MATRICULA"],
-      ["Validação de horas complementares", "ADM_HORAS"],
-      ["Vagas remanescentes", "ADM_REMANESC"],
-      ["Dupla graduação", "ADM_DUPLA"],
-      ["Intercâmbio", "ADM_INTERCAMBIO"],
-      ["Cancelamento de disciplina", "ADM_CANCEL"],
-      ["Histórico escolar", "ADM_HIST"],
-      ["Declarações e atestados acadêmicos", "ADM_DECLAR"],
-      ["Outros", "ADM_OUTROS"]
-    ]
-  },
-
-  "ESTAGIO": {
-    "texto": "Ok, sua dúvida é sobre 'Estágio'. O que você quer saber, mais especificamente?",
-    "opcoes": [
-      ["Validação de horas de estágio", "EST_HORAS"],
-      ["Centro de carreiras", "EST_CARREIRAS"],
-      ["Documentos de estágio", "EST_DOCS"]
-    ]
-  },
-
-  "INFRA": {
-    "texto": "Ok, sua dúvida é sobre 'Infraestrutura'. O que você quer saber, mais especificamente?",
-    "opcoes": [
-      ["9 de Julho 2029 / Itapeva 432 (Administração de Empresas)", "INF_9J"],
-      ["Plínio Barreto 365 (Direito e Economia)", "INF_PB"],
-      ["Picarolo 63 (Administração de Empresas)", "INF_PIC"],
-      ["Itapeva 474 (Relações Internacionais)", "INF_474"]
-    ]
-  },
-
-  "OUTROS": {
-    "texto": "Ok, sua dúvida é sobre 'Outros'. O que você quer saber, mais especificamente?",
-    "opcoes": [
-      ["Guarda religiosa", "OUT_GUARDA"],
-      ["Regime excepcional de estudos", "OUT_REE"],
-      ["Recursos TIC", "OUT_TIC"]
-    ]
-  },
-
-  "SECRETARIA": {
-    "texto": "Ok, antes de te encaminhar para a secretaria, só me informe seu nome completo, por favor.",
-    "opcoes": []
-  },
-"FIN_COBR": {
-  "texto": "Ok, você quer saber sobre 'Cobranças a pagar'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para acessar suas cobranças pendentes, entre no Aluno Online → Financeiro → Cobranças a pagar."
+    "ROOT": {
+        "texto": "Olá, sou o assistente virtual desenvolvido pela GVCODE. Minha função é tirar suas dúvidas sobre os processos internos da FGV.\n\nPara começar, sobre o que é sua dúvida?",
+        "opcoes": [
+            [
+                "Financeiro",
+                "FINANCEIRO"
+            ],
+            [
+                "Acadêmico",
+                "ACADEMICO"
+            ],
+            [
+                "Administrativo",
+                "ADMIN"
+            ],
+            [
+                "Estágio",
+                "ESTAGIO"
+            ],
+            [
+                "Infraestrutura",
+                "INFRA"
+            ],
+            [
+                "Outros",
+                "OUTROS"
+            ],
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
     },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Aluno Online",
-      "url": "https://aluno-online-sp.fgv.br/"
+    "FINANCEIRO": {
+        "texto": "Ok, sua dúvida é sobre 'Financeiro'. O que você quer saber, mais especificamente?",
+        "opcoes": [
+            [
+                "Cobranças a pagar",
+                "FIN_COBR"
+            ],
+            [
+                "Bolsa de estudos",
+                "FIN_BOLSA"
+            ],
+            [
+                "Bilhete de transporte",
+                "FIN_BILH"
+            ],
+            [
+                "Informe de Pagamentos / Nota Fiscal",
+                "FIN_INF"
+            ],
+            [
+                "Outros",
+                "FIN_OUT"
+            ]
+        ]
     },
-    {
-      "tipo": "nota",
-      "conteudo": "Para solicitar segunda via de boleto, entre no Portal de Serviços → Solicitações Financeiras → 2ª Via de Boleto."
+    "ACADEMICO": {
+        "texto": "Ok, sua dúvida é sobre 'Acadêmico'. O que você quer saber, mais especificamente?",
+        "opcoes": [
+            [
+                "Calendário",
+                "ACA_CALEND"
+            ],
+            [
+                "Prova de segunda chamada",
+                "ACA_SEGCHAM"
+            ],
+            [
+                "Prova REAVAL",
+                "ACA_REAVAL"
+            ],
+            [
+                "Entidades e Coletivos",
+                "ACA_ENTID"
+            ],
+            [
+                "Syllabus de matérias",
+                "ACA_SYLL"
+            ],
+            [
+                "TCC",
+                "ACA_TCC"
+            ],
+            [
+                "Imersão / Semana Concentrada",
+                "ACA_IMERSAO"
+            ],
+            [
+                "Monitoria",
+                "ACA_MONIT"
+            ]
+        ]
     },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
+    "ADMIN": {
+        "texto": "Ok, sua dúvida é sobre 'Administrativo'. O que você quer saber, mais especificamente?",
+        "opcoes": [
+            [
+                "Matrícula / Rematrícula",
+                "ADM_MATRIC"
+            ],
+            [
+                "Validação de horas complementares",
+                "ADM_HCOMP"
+            ],
+            [
+                "Vagas remanescentes",
+                "ADM_VAGAS"
+            ],
+            [
+                "Dupla graduação",
+                "ADM_DUPLA"
+            ],
+            [
+                "Intercâmbio",
+                "ADM_INTERC"
+            ],
+            [
+                "Cancelamento de disciplina",
+                "ADM_CANCEL"
+            ],
+            [
+                "Histórico escolar",
+                "ADM_HIST"
+            ],
+            [
+                "Declarações e atestados acadêmicos",
+                "ADM_DECL"
+            ],
+            [
+                "Outros",
+                "ADM_OUTROS"
+            ]
+        ]
     },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+    "ESTAGIO": {
+        "texto": "Ok, sua dúvida é sobre 'Estágio'. O que você quer saber, mais especificamente?",
+        "opcoes": [
+            [
+                "Validação de horas de estágio",
+                "EST_HORAS"
+            ],
+            [
+                "Centro de carreiras",
+                "EST_CARREIRAS"
+            ],
+            [
+                "Documentos de estágio",
+                "EST_DOCS"
+            ]
+        ]
+    },
+    "INFRA": {
+        "texto": "Ok, sua dúvida é sobre 'Infraestrutura'. O que você quer saber, mais especificamente?",
+        "opcoes": [
+            [
+                "9 de Julho 2029 / Itapeva 432 (Administração de Empresas)",
+                "INF_9J"
+            ],
+            [
+                "Plínio Barreto 365 (Direito e Economia)",
+                "INF_PB"
+            ],
+            [
+                "Picarolo 63 (Administração de Empresas)",
+                "INF_PIC"
+            ],
+            [
+                "Itapeva 474 (Relações Internacionais)",
+                "INF_ITA"
+            ]
+        ]
+    },
+    "OUTROS": {
+        "texto": "Ok, sua dúvida é sobre 'Outros'. O que você quer saber, mais especificamente?",
+        "opcoes": [
+            [
+                "Guarda religiosa",
+                "OUT_GUARDA"
+            ],
+            [
+                "Regime excepcional de estudos",
+                "OUT_REE"
+            ],
+            [
+                "Recursos TIC",
+                "OUT_TIC"
+            ]
+        ]
+    },
+    "SECRETARIA": {
+        "texto": "Ok, antes de te encaminhar para a secretaria, só me informe seu nome completo, por favor.",
+        "opcoes": []
+    },
+    "FIN_COBR": {
+        "texto": "Ok, você quer saber sobre 'Cobranças a pagar'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para acessar suas cobranças pendentes, entre no Aluno Online → Financeiro → Cobranças a pagar."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Para solicitar segunda via de boleto, entre no Portal de Serviços → Solicitações Financeiras → 2ª Via de Boleto."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_BOLSA": {
+        "texto": "Ok, você quer saber sobre 'Bolsa de Estudos'. Sobre o que especificamente?",
+        "opcoes": [
+            [
+                "Solicitação de Bolsa",
+                "FIN_BOLSA_SOLIC"
+            ],
+            [
+                "Renovação de Bolsa",
+                "FIN_BOLSA_RENOV"
+            ],
+            [
+                "Reconsideração de Bolsa",
+                "FIN_BOLSA_RECON"
+            ],
+            [
+                "Documentação",
+                "FIN_BOLSA_DOC"
+            ],
+            [
+                "Sobre o Fundo de Bolsas",
+                "FIN_BOLSA_SOBRE"
+            ],
+            [
+                "Dúvidas",
+                "FIN_BOLSA_DUVIDAS"
+            ],
+            [
+                "Falar com o Fundo de Bolsas",
+                "FIN_BOLSA_CONTATO"
+            ]
+        ]
+    },
+    "FIN_BOLSA_SOLIC": {
+        "texto": "Ok, você quer saber sobre 'Solicitação de Bolsa'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "O aluno interessado em solicitar ou renovar a bolsa de estudos deve acessar o Formulário de Pedido de Financiamento Restituível e a Planilha de detalhamento de Receitas e Despesas disponíveis na Intranet Acadêmica: Financeiro → Graduação → Fundo de Bolsas → Formulário de Pedido de Financiamento Restituível."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet Acadêmica",
+                "url": "https://intra.eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Para fazer a solicitação de bolsa de estudos, acesse o Portal de Serviços → Solicitações de Bolsas de Estudos → Solicitações de Bolsas de Estudos. As solicitações só ficam abertas por um período determinado, divulgado por e-mail pelo Fundo de Bolsas."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_BOLSA_RENOV": {
+        "texto": "Ok, você quer saber sobre 'Renovação de Bolsa'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "O processo de renovação de bolsa é parecido com o de solicitação. Basta acessar o Portal de Serviços → Solicitações de Bolsas de Estudos → Renovação de Bolsas de Estudos."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_BOLSA_RECON": {
+        "texto": "Ok, você quer saber sobre 'Reconsideração de Bolsa'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "O pedido de reconsideração de bolsa precisa ser feito em uma janela de tempo após a divulgação do resultado. Acesse o Portal de Serviços → Solicitações de Bolsas de Estudos → Reconsideração de Bolsa."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_BOLSA_DOC": {
+        "texto": "Ok, você quer saber sobre 'Documentação para Bolsa de Estudos'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para ver a documentação necessária para fazer seu requerimento, acesse o Portal de Serviços → Solicitações de Bolsas de Estudos → Solicitações de Bolsas de Estudos. Lá estão listados todos os documentos necessários para a solicitação."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "O Formulário de Pedido de Financiamento Restituível e a Planilha de detalhamento de Receitas e Despesas estão disponíveis na Intranet Acadêmica: Financeiro → Graduação → Fundo de Bolsas → Formulário de Pedido de Financiamento Restituível."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet Acadêmica",
+                "url": "https://intra.eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_BOLSA_SOBRE": {
+        "texto": "Ok, você quer saber mais sobre o Fundo de Bolsas.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "O programa de bolsas da FGV EAESP tem proporcionado o acesso a uma formação de excelência a jovens com alto potencial, independentemente de suas condições econômicas, além de proporcionar uma diversidade do corpo discente extremamente enriquecedora para as experiências no ambiente acadêmico."
+            }
+        ],
+        "opcoes": []
+    },
+    "FIN_BOLSA_DUVIDAS": {
+        "texto": "Ok, você quer saber onde tirar dúvidas sobre Bolsa de Estudos.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Caso tenha dúvidas, o Portal de Serviços possui uma opção para enviar dúvidas diretamente para o Fundo de Bolsas: Portal de Serviços → Solicitações de Bolsas de Estudos → Dúvidas - Bolsa de Estudos."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "O Coletivo Plutão, formado por alunos bolsistas, também fica à disposição para responder perguntas pelo Instagram."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Instagram do Coletivo Plutão",
+                "url": "https://www.instagram.com/coletivoplutao/?hl=pt-br"
+            }
+        ],
+        "opcoes": []
+    },
+    "FIN_BOLSA_CONTATO": {
+        "texto": "Ok, você quer falar com o Fundo de Bolsas.",
+        "itens": [
+            {
+                "tipo": "contato",
+                "conteudo": "(11) 3799-7786"
+            }
+        ],
+        "opcoes": []
+    },
+    "FIN_BILH": {
+        "texto": "Ok, você quer saber sobre 'Bilhete de Transporte'. Qual das opções mais se relaciona com sua dúvida?",
+        "opcoes": [
+            [
+                "Emissão de Bilhete",
+                "FIN_BILH_EMISSAO"
+            ],
+            [
+                "Renovação do Bilhete",
+                "FIN_BILH_RENOV"
+            ]
+        ]
+    },
+    "FIN_BILH_EMISSAO": {
+        "texto": "Ok, você quer saber sobre 'Emissão de Bilhete de Transporte'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para fazer a emissão do seu primeiro bilhete único, acesse o Portal de Serviços → Bilhete de Transporte → Bilhete de Transporte e preencha o formulário."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Após preencher e enviar o formulário, a escola encaminhará seus dados de matrícula para a SPTrans e responderá ao requerimento."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acompanhar solicitação na SPTrans",
+                "url": "https://estudante.sptrans.com.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_BILH_RENOV": {
+        "texto": "Ok, você quer saber sobre 'Renovação do Bilhete de Transporte'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para renovar seu bilhete, acesse o site da SPTrans. A renovação precisa ser feita a cada 6 meses, caso contrário o bilhete não funciona."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Renovar no site da SPTrans",
+                "url": "https://estudante.sptrans.com.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_INF": {
+        "texto": "Ok, você quer saber sobre 'Informe de Pagamentos / Nota Fiscal'.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para ver suas declarações de pagamento, entre no Aluno Online → Financeiro → Declaração de Pagamentos (Ano atual/Anterior)."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "FIN_OUT": {
+        "texto": "Ok, você quer saber sobre outras solicitações financeiras.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para outras solicitações financeiras, como 'Alteração de Responsável Financeiro' e 'Negociação de Inadimplência', entre no Portal de Serviços → Solicitações Financeiras."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ACA_CALEND": {
+        "texto": "Ok, para qual ano você deseja visualizar o calendário?",
+        "opcoes": [
+            [
+                "Calendário 2022",
+                "ACA_CALEND_2022"
+            ],
+            [
+                "Calendário 2023",
+                "ACA_CALEND_2023"
+            ],
+            [
+                "Calendário 2024",
+                "ACA_CALEND_2024"
+            ],
+            [
+                "Calendário 2025",
+                "ACA_CALEND_2025"
+            ],
+            [
+                "Calendário 2026",
+                "ACA_CALEND_2026"
+            ]
+        ]
+    },
+    "ACA_CALEND_2022": {
+        "texto": "Calendário 2022 (Diurno e Noturno).",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2022 - Diurno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/calendario_escolar_geral_2022_2.pdf"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2022 - Noturno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/2022_ae_veterano_noturno_intranet_vr_6.pdf"
+            }
+        ],
+        "opcoes": []
+    },
+    "ACA_CALEND_2023": {
+        "texto": "Calendário 2023 (Diurno e Noturno).",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2023 - Diurno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario_escolar_geral_2023.pdf"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2023 - Noturno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/ae-ingressante-noturno-versao-3.5-intranet.pdf"
+            }
+        ],
+        "opcoes": []
+    },
+    "ACA_CALEND_2024": {
+        "texto": "Calendário 2024 (Diurno e Noturno).",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2024 - Diurno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario-escolar-2024.pdf"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2024 - Noturno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/AE/CALENDARIOS/2025/ae-veternano-noturno-intranet-vr-8.pdf"
+            }
+        ],
+        "opcoes": []
+    },
+    "ACA_CALEND_2025": {
+        "texto": "Calendário 2025 (Diurno e Noturno).",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2025 - Diurno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario-escolar-geral-2025_alterado-em-10.02.25.pdf"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2025 - Noturno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/AE/CALENDARIOS/2025/ae-veternano-noturno-intranet-vr-8.pdf"
+            }
+        ],
+        "opcoes": []
+    },
+    "ACA_CALEND_2026": {
+        "texto": "Calendário 2026 (Diurno e Noturno).",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2026 - Diurno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario-escolar-geral-2026_alterado-em-24.09.25.pdf"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Calendário 2026 - Noturno",
+                "url": "https://intra-eaesp.fgv.br/sites/default/files/AE/CALENDARIOS/2026/ae-veterano-noturno-2026-vr0.pdf"
+            }
+        ],
+        "opcoes": []
+    },
+    "ACA_SEGCHAM": {
+        "texto": "Ok, você quer saber sobre Prova de Segunda Chamada.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para solicitar prova de segunda chamada, acesse o Portal de Serviços → Prova de Segunda Chamada. O requerimento fica disponível apenas por um período, geralmente informado por e-mail."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "O serviço por falta de comparecimento é pago (R$ 150,00). Já o serviço por conflito de horário (ou mais de duas provas no mesmo dia) segue regras específicas descritas no Portal."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ACA_REAVAL": {
+        "texto": "Ok, você quer saber sobre Prova Reaval.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para fazer a Prova Reaval, o aluno precisa ter concluído a matéria com média entre 5,00 e 5,99. Só é possível fazer Reaval de uma matéria por semestre."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar formulário direto (Reaval)",
+                "url": "https://formularioopcoes.fgv.br/"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar via Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "O requerimento fica disponível apenas por um período, informado por e-mail. A coordenadoria envia notificações com datas, prazos e instruções."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ACA_ENTID": {
+        "texto": "As entidades são instituições estudantis formadas e geridas pelos alunos da FGV, com diversos escopos. Um aluno pode participar de até 2 entidades e 1 representativa. Entidades podem ser Empresa Júnior, Consultoria, Liga ou Grupo de Estudos; as representativas incluem Diretório Acadêmico (DA), Atlética e APA (Amor Preto e Amarelo). Sobre qual entidade você quer saber mais?",
+        "opcoes": [
+            [
+                "GV Code",
+                "ENT_GVCODE"
+            ],
+            [
+                "Associação Atlética Acadêmica Getulio Vargas (AAAGV)",
+                "ENT_ATLETICA"
+            ],
+            [
+                "Agroliga FGV",
+                "ENT_AGROLIGA"
+            ],
+            [
+                "CJE FGV",
+                "ENT_CJE"
+            ],
+            [
+                "Consultoria de Marketing (CMKT)",
+                "ENT_CMKT"
+            ],
+            [
+                "Conexão Social",
+                "ENT_CONEXAO"
+            ],
+            [
+                "Consultoria Júnior Pública (CJP)",
+                "ENT_CJP"
+            ],
+            [
+                "Consultoria RH Júnior",
+                "ENT_RHJR"
+            ],
+            [
+                "Cursinho FGV",
+                "ENT_CURSINHO"
+            ],
+            [
+                "Diretório Acadêmico Getulio Vargas (DAGV)",
+                "ENT_DAGV"
+            ],
+            [
+                "Empresa Júnior FGV (EJFGV)",
+                "ENT_EJFGV"
+            ],
+            [
+                "Estudos de Política em Pauta (EPEP)",
+                "ENT_EPEP"
+            ],
+            [
+                "FGV Finance",
+                "ENT_FINANCE"
+            ],
+            [
+                "FGV Quant",
+                "ENT_QUANT"
+            ],
+            [
+                "FGV Tech",
+                "ENT_TECH"
+            ],
+            [
+                "Gazeta Vargas",
+                "ENT_GAZETA"
+            ],
+            [
+                "Grupo Acadêmico de Interesse Ambiental (GAIA)",
+                "ENT_GAIA"
+            ],
+            [
+                "FGV Crypto",
+                "ENT_CRYPTO"
+            ],
+            [
+                "Liga de Negócios de Moda",
+                "ENT_MODA"
+            ],
+            [
+                "Liga de Empreendedorismo FGV",
+                "ENT_EMPREEN"
+            ],
+            [
+                "Liga de Gestão Esportiva (LiGE)",
+                "ENT_LIGE"
+            ],
+            [
+                "Liga de Logística FGV",
+                "ENT_LOG"
+            ],
+            [
+                "Liga de Music Business",
+                "ENT_MUSIC"
+            ]
+        ]
+    },
+    "ACA_SYLL": {
+        "texto": "Ok, você quer saber sobre Syllabus de matérias.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para ver os Syllabus das matérias, acesse a Intranet → Cursos de Graduação → Administração de Empresas → Matrículas e Disciplinas."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet",
+                "url": "https://intra-eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ACA_TCC": {
+        "texto": "Ok, você quer saber sobre TCC (Trabalho de Conclusão de Curso).",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "O TCC é uma matéria obrigatória. No 7º semestre, o foco é orientação e início do projeto. No 8º semestre, o aluno desenvolve o trabalho e entrega ao final do período."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Após a entrega, o aluno apresenta e defende o TCC para uma banca de avaliadores."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ACA_IMERSAO": {
+        "texto": "Ok, você quer saber sobre Imersão e Semana Concentrada.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Semana Concentrada: um tópico é estudado intensivamente em poucos dias, com discussões em aula, atividades práticas e um trabalho final. Geralmente ocorre do 2º ao 4º semestre, com temas como Soft Skills, Sustentabilidade e Empreendedorismo."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Imersão: a partir do 5º semestre, o aluno pode escolher uma Imersão em determinada área. Dura uma semana, em período integral ou noturno, e a escolha é feita junto com a Matrícula de Veteranos."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ACA_MONIT": {
+        "texto": "Ok, você quer saber sobre Monitoria.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "As monitorias são aulas de dúvidas específicas dadas por alunos que se destacaram na matéria."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Para saber mais sobre uma monitoria específica, entre em contato com o(a) professor(a) da disciplina; ele(a) poderá indicar o(a) monitor(a) responsável."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Para se inscrever como monitor, fique atento(a) ao seu e-mail institucional: a faculdade envia instruções de inscrição por lá."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ENT_GVCODE": {
+        "texto": "A GV Code é a entidade de data science e programação da FGV.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram GV Code",
+                "url": "https://www.instagram.com/gvcode/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_ATLETICA": {
+        "texto": "A Atlética fomenta o esporte dentro da FGV e representa a escola em competições universitárias.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Atlética",
+                "url": "https://www.instagram.com/jacarefgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_AGROLIGA": {
+        "texto": "A Agroliga FGV fomenta o estudo e debate sobre agronegócio e desenvolvimento rural.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Agroliga",
+                "url": "https://www.instagram.com/agroligafgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_CJE": {
+        "texto": "A CJE FGV é a empresa júnior de mercado financeiro da FGV.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram CJE",
+                "url": "https://www.instagram.com/cjefgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_CMKT": {
+        "texto": "A Consultoria de Marketing presta serviços de marketing digital e planejamento estratégico.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram CMKT",
+                "url": "https://www.instagram.com/consultoriamktgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_CONEXAO": {
+        "texto": "A Conexão Social promove projetos de impacto social e desenvolvimento comunitário.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Conexão Social",
+                "url": "https://www.instagram.com/conexaosocial/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_CJP": {
+        "texto": "A CJP atua em consultoria estratégica com foco em impacto social no primeiro e terceiro setor.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram CJP",
+                "url": "http://instagram.com/cjpfgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_RHJR": {
+        "texto": "A Consultoria RH Júnior desenvolve projetos de gestão de pessoas para empresas e organizações.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram RH Jr",
+                "url": "https://www.instagram.com/consultoriarhjunior/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_CURSINHO": {
+        "texto": "O Cursinho FGV democratiza o acesso ao ensino superior preparando jovens para vestibulares.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Cursinho",
+                "url": "https://www.instagram.com/cursinhofgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_DAGV": {
+        "texto": "O Diretório Acadêmico representa o corpo discente e promove a integração entre os alunos da FGV.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram DAGV",
+                "url": "https://www.instagram.com/giocondavenuta/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_EJFGV": {
+        "texto": "A Empresa Júnior FGV oferece serviços de consultoria estratégica desde 1988.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram EJFGV",
+                "url": "https://www.instagram.com/ejfgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_EPEP": {
+        "texto": "O EPEP promove educação e debate político dentro e fora do ambiente universitário.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram EPEP",
+                "url": "https://www.instagram.com/epepfgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_FINANCE": {
+        "texto": "A FGV Finance é a liga de mercado financeiro, com preparação voltada ao setor.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Finance",
+                "url": "https://www.instagram.com/fgvfinance/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_QUANT": {
+        "texto": "A FGV Quant desenvolve estudos em finanças quantitativas aplicando matemática e programação.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Quant",
+                "url": "https://www.instagram.com/fgvquant/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_TECH": {
+        "texto": "A FGV Tech aprofunda a formação em tecnologia com foco em mercado e inovação.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Tech",
+                "url": "https://www.instagram.com/fgvtech/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_GAZETA": {
+        "texto": "A Gazeta Vargas é a revista estudantil oficial da FGV-SP, dando voz ao alunato há mais de 25 anos.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Gazeta Vargas",
+                "url": "https://www.instagram.com/gazetavargasfgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_GAIA": {
+        "texto": "O GAIA realiza projetos e estudos sobre sustentabilidade e impacto ambiental.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram GAIA",
+                "url": "https://www.instagram.com/gaia.fgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_CRYPTO": {
+        "texto": "A GV Crypto é a primeira entidade da América Latina focada em cripto e blockchain.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Crypto",
+                "url": "https://www.instagram.com/fgvcrypto/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_MODA": {
+        "texto": "A Liga de Negócios de Moda desenvolve estudo e capacitação na indústria de moda e cosméticos.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Moda",
+                "url": "https://www.instagram.com/lnmodafgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_EMPREEN": {
+        "texto": "A Liga de Empreendedorismo FGV promove desenvolvimento e criação de negócios.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Empreendedorismo",
+                "url": "https://www.instagram.com/lefgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_LIGE": {
+        "texto": "A Liga de Gestão Esportiva presta consultoria especializada para o universo esportivo.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram LiGE",
+                "url": "https://www.instagram.com/ligefgv/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_LOG": {
+        "texto": "A Liga de Logística FGV capacita os alunos em logística, operações e supply chain.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Logística",
+                "url": "https://www.instagram.com/ligadelogistica/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ENT_MUSIC": {
+        "texto": "A Liga de Music Business estuda o mercado da música e a indústria criativa.",
+        "itens": [
+            {
+                "tipo": "link",
+                "titulo": "Instagram Liga Music Business",
+                "url": "https://www.instagram.com/liga.musicbusiness/"
+            }
+        ],
+        "opcoes": []
+    },
+    "ADM_MATRIC": {
+        "texto": "Ok, você quer saber sobre Matrícula / Rematrícula.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para realizar a matrícula ou rematrícula, acesse o Aluno Online → 'Matrícula de veteranos'. O sistema exibirá as matérias obrigatórias e optativas disponíveis conforme o seu semestre."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "A matrícula é feita dentro do período informado por e-mail pela Secretaria Acadêmica."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Se precisar de suporte técnico ou tiver pendências, acesse o Portal de Serviços → 'Solicitações Acadêmicas' → 'Problemas com Matrícula'."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_HCOMP": {
+        "texto": "Ok, você quer saber sobre Validação de Horas Complementares.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "As horas complementares devem ser registradas no Aluno Online → 'Atividades Complementares'."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "É necessário anexar os comprovantes (certificados, declarações etc.) em formato PDF."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "O prazo para envio e a quantidade de horas obrigatórias variam conforme o curso."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Em caso de dúvida, entre em contato com a Secretaria ou selecione 'Falar com a secretaria' no assistente."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_VAGAS": {
+        "texto": "Ok, você quer saber sobre Vagas Remanescentes.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Durante o período de vagas remanescentes, após a matrícula regular, os alunos podem se inscrever em disciplinas que ainda possuem vagas."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "A secretaria envia e-mail informando quais matérias e turmas possuem vagas remanescentes, além das instruções para a matrícula."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_DUPLA": {
+        "texto": "Ok, você quer saber sobre Dupla Graduação.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "A FGV oferece programas de dupla graduação com outras escolas da instituição e, em alguns casos, com universidades estrangeiras."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Os alunos interessados devem preencher o formulário de inscrição disponível no Portal de Serviços → 'Dupla Graduação'."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Os critérios de elegibilidade incluem desempenho acadêmico, nível de inglês e disponibilidade de vagas."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_INTERC": {
+        "texto": "Ok, você quer saber sobre Intercâmbio.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Todas as informações sobre intercâmbio estão na Intranet FGV: Office for Global Affairs → Outgoing → Intercâmbio."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet",
+                "url": "https://intra-eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Dúvidas não respondidas pelos documentos devem ser levadas diretamente ao Office for Global Affairs, localizado no 3º andar do prédio da 9 de Julho."
+            }
+        ]
+    },
+    "ADM_CANCEL": {
+        "texto": "Ok, você quer saber sobre Cancelamento de Disciplina.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para solicitar o cancelamento de disciplina, acesse o Portal de Serviços → 'Solicitações Acadêmicas' → 'Cancelamento de Disciplina'."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "A solicitação deve ser feita dentro do prazo definido no calendário acadêmico."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "O cancelamento pode impactar pré-requisitos e o número mínimo de créditos do semestre, então é importante verificar isso antes de solicitar."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_HIST": {
+        "texto": "Ok, você quer saber sobre Histórico Escolar.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para consultar ou emitir o histórico escolar, acesse o Aluno Online → 'Secretaria Virtual' → 'Histórico Escolar'."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "É possível gerar uma versão digital autenticada pelo sistema."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_DECL": {
+        "texto": "Ok, você quer saber sobre Declarações e Atestados Acadêmicos.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para emitir declarações e atestados acadêmicos (como matrícula, frequência ou conclusão), acesse o Portal de Serviços."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Alguns documentos são gerados automaticamente; outros exigem aprovação da Secretaria Acadêmica."
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "ADM_OUTROS": {
+        "texto": "Ok, você quer saber sobre Outros assuntos administrativos.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para mais informações acadêmicas, você pode consultar:"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Intranet FGV",
+                "url": "https://intra-eaesp.fgv.br/"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Aluno Online",
+                "url": "https://aluno-online-sp.fgv.br/"
+            },
+            {
+                "tipo": "link",
+                "titulo": "Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "EST_HORAS": {
+        "texto": "Você quer saber sobre Validação de Horas de Estágio.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para validar as horas de estágio é preciso fazer um requerimento no Portal de Serviços (https://servicosacad.fgv.br/) → Validação de Horas de Estágio."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "EST_CARREIRAS": {
+        "texto": "Você quer saber sobre o Centro de Carreiras.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "O Centro de Carreiras da EAESP orienta alunos e ex-alunos em seu desenvolvimento profissional. Mais informações estão disponíveis no Intranet → Centro de Carreiras."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet",
+                "url": "https://intra-eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "EST_DOCS": {
+        "texto": "Você quer saber sobre Documentos de Estágio.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Todos os documentos necessários para assinatura do estágio estão disponíveis no Intranet → Centro de Carreiras → Estágio → Documentos Obrigatórios."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet",
+                "url": "https://intra-eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "INF_9J": {
+        "texto": "Ok, você quer saber um pouco mais sobre o Prédio de Administração de Empresas 9 de Julho 2029 / Itapeva 432. Vou listar aqui alguns pontos de interesse para te ajudar:",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Térreo (9 de Julho): Acesso à 9 de julho; Sala da LE (Liga de Empreendedorismo).\n1º Andar: Rockafé; Getulinho (refeitório); Espaço de convivência fechado; Salas de entidades (Atlética, DA, RH Júnior e Gazeta Vargas); Acesso ao Auditório; Geladeira; Microondas; Mesa de doces.\n2º Andar: Acesso por meio de passarela à biblioteca; Espaço de convivência 'Uliving'; Secretaria-SRA; Student Services; Alumni.\n3º Andar: Coordenação; Diretoria.\n4º Andar: Salão Nobre; Refeitório dos professores.\n5º Andar: LEPI (Salas com computadores); Serviço de impressão; Ambulatório; Rockafé.\n7º Andar: Acesso à Itapeva; Fumódromo; Quadra de esportes; Salas de entidades (Atlética, Bateria Tatubola, CJP, EJ); Rockafé; Food truck; Mercado Hirota.\n13º Andar: Piscina; Rockafé."
+            }
+        ],
+        "opcoes": []
+    },
+    "INF_PB": {
+        "texto": "Ok, você quer saber um pouco mais sobre o Prédio de Direito e Economia Plínio Barreto 365. Vou listar aqui alguns pontos de interesse para te ajudar:",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Térreo: Acesso à Plínio Barreto, estacionamento e espaço de convivência.\n1º Andar: Rockafé; DA Econo e CA Direito.\n2º ao 6º e 8º Andares: Aquários para estudo.\n7º Andar: Biblioteca.\n15º Andar: Auditório.\nMáquinas de vendas: Espaço de convivência, 3º e 5º andares."
+            }
+        ],
+        "opcoes": []
+    },
+    "INF_PIC": {
+        "texto": "Ok, você quer saber um pouco mais sobre o Prédio de Administração de Empresas Picarolo 63. Vou listar aqui alguns pontos de interesse para te ajudar:",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Térreo: Acesso à Picarolo.\n4º Andar: Rockafé; Espaço de convivência.\n5º Andar: LEPI (Salas com computadores).\n12º Andar: Espaço de convivência; Máquinas de vendas."
+            }
+        ],
+        "opcoes": []
+    },
+    "INF_ITA": {
+        "texto": "Ok, você quer saber um pouco mais sobre o Prédio de Relações Internacionais Itapeva 474. Vou listar aqui alguns Pontos de Interesse para te ajudar!",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Térreo: Acesso à Itapeva; Rockafé; Recepção.\n5º Andar: Salas de Estudos.\n13° Andar: Coordenação."
+            }
+        ],
+        "opcoes": []
+    },
+    "OUT_GUARDA": {
+        "texto": "Ok, você quer saber sobre Guarda Religiosa.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para solicitar Guarda Religiosa, acesse o Portal de Serviços → Guarda Religiosa e envie o seu pedido."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "OUT_REGIME": {
+        "texto": "Ok, você quer saber sobre Regime Excepcional de Estudos.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para solicitar Regime Excepcional de Estudos, acesse o Portal de Serviços → Regime Excepcional de Estudos e envie seu requerimento."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Portal de Serviços",
+                "url": "https://servicosacad.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
+    },
+    "OUT_TIC": {
+        "texto": "Ok, você quer saber sobre Recursos TIC.",
+        "itens": [
+            {
+                "tipo": "nota",
+                "conteudo": "Para informações sobre softwares, licenças e ferramentas tecnológicas disponíveis aos alunos, acesse a Intranet → Aluno → Recursos de TIC / Softwares."
+            },
+            {
+                "tipo": "link",
+                "titulo": "Acessar Intranet",
+                "url": "https://intra-eaesp.fgv.br/"
+            },
+            {
+                "tipo": "nota",
+                "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
+            }
+        ],
+        "opcoes": [
+            [
+                "Falar com a secretaria",
+                "SECRETARIA"
+            ]
+        ]
     }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_BOLSA": {
-  "texto": "Ok, você quer saber sobre 'Bolsa de Estudos'. Sobre o que especificamente?",
-  "opcoes": [
-    ["Solicitação de Bolsa", "FIN_BOLSA_SOLIC"],
-    ["Renovação de Bolsa", "FIN_BOLSA_RENOV"],
-    ["Reconsideração de Bolsa", "FIN_BOLSA_RECON"],
-    ["Documentação", "FIN_BOLSA_DOC"],
-    ["Sobre o Fundo de Bolsas", "FIN_BOLSA_SOBRE"],
-    ["Dúvidas", "FIN_BOLSA_DUVIDAS"],
-    ["Falar com o Fundo de Bolsas", "FIN_BOLSA_CONTATO"]
-  ]
-},
-
-"FIN_BOLSA_SOLIC": {
-  "texto": "Ok, você quer saber sobre 'Solicitação de Bolsa'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "O aluno interessado em solicitar ou renovar a bolsa de estudos deve acessar o Formulário de Pedido de Financiamento Restituível e a Planilha de detalhamento de Receitas e Despesas disponíveis na Intranet Acadêmica: Financeiro → Graduação → Fundo de Bolsas → Formulário de Pedido de Financiamento Restituível."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Intranet Acadêmica",
-      "url": "https://intra.eaesp.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Para fazer a solicitação de bolsa de estudos, acesse o Portal de Serviços → Solicitações de Bolsas de Estudos → Solicitações de Bolsas de Estudos. As solicitações só ficam abertas por um período determinado, divulgado por e-mail pelo Fundo de Bolsas."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_BOLSA_RENOV": {
-  "texto": "Ok, você quer saber sobre 'Renovação de Bolsa'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "O processo de renovação de bolsa é parecido com o de solicitação. Basta acessar o Portal de Serviços → Solicitações de Bolsas de Estudos → Renovação de Bolsas de Estudos."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_BOLSA_RECON": {
-  "texto": "Ok, você quer saber sobre 'Reconsideração de Bolsa'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "O pedido de reconsideração de bolsa precisa ser feito em uma janela de tempo após a divulgação do resultado. Acesse o Portal de Serviços → Solicitações de Bolsas de Estudos → Reconsideração de Bolsa."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_BOLSA_DOC": {
-  "texto": "Ok, você quer saber sobre 'Documentação para Bolsa de Estudos'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para ver a documentação necessária para fazer seu requerimento, acesse o Portal de Serviços → Solicitações de Bolsas de Estudos → Solicitações de Bolsas de Estudos. Lá estão listados todos os documentos necessários para a solicitação."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "O Formulário de Pedido de Financiamento Restituível e a Planilha de detalhamento de Receitas e Despesas estão disponíveis na Intranet Acadêmica: Financeiro → Graduação → Fundo de Bolsas → Formulário de Pedido de Financiamento Restituível."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Intranet Acadêmica",
-      "url": "https://intra.eaesp.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_BOLSA_SOBRE": {
-  "texto": "Ok, você quer saber mais sobre o Fundo de Bolsas.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "O programa de bolsas da FGV EAESP tem proporcionado o acesso a uma formação de excelência a jovens com alto potencial, independentemente de suas condições econômicas, além de proporcionar uma diversidade do corpo discente extremamente enriquecedora para as experiências no ambiente acadêmico."
-    }
-  ],
-  "opcoes": []
-},
-
-"FIN_BOLSA_DUVIDAS": {
-  "texto": "Ok, você quer saber onde tirar dúvidas sobre Bolsa de Estudos.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Caso tenha dúvidas, o Portal de Serviços possui uma opção para enviar dúvidas diretamente para o Fundo de Bolsas: Portal de Serviços → Solicitações de Bolsas de Estudos → Dúvidas - Bolsa de Estudos."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "O Coletivo Plutão, formado por alunos bolsistas, também fica à disposição para responder perguntas pelo Instagram."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Instagram do Coletivo Plutão",
-      "url": "https://www.instagram.com/coletivoplutao/?hl=pt-br"
-    }
-  ],
-  "opcoes": []
-},
-
-"FIN_BOLSA_CONTATO": {
-  "texto": "Ok, você quer falar com o Fundo de Bolsas.",
-  "itens": [
-    {
-      "tipo": "contato",
-      "conteudo": "(11) 3799-7786"
-    }
-  ],
-  "opcoes": []
-},
-
-"FIN_BILH": {
-  "texto": "Ok, você quer saber sobre 'Bilhete de Transporte'. Qual das opções mais se relaciona com sua dúvida?",
-  "opcoes": [
-    ["Emissão de Bilhete", "FIN_BILH_EMISSAO"],
-    ["Renovação do Bilhete", "FIN_BILH_RENOV"]
-  ]
-},
-
-"FIN_BILH_EMISSAO": {
-  "texto": "Ok, você quer saber sobre 'Emissão de Bilhete de Transporte'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para fazer a emissão do seu primeiro bilhete único, acesse o Portal de Serviços → Bilhete de Transporte → Bilhete de Transporte e preencha o formulário."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Após preencher e enviar o formulário, a escola encaminhará seus dados de matrícula para a SPTrans e responderá ao requerimento."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acompanhar solicitação na SPTrans",
-      "url": "https://estudante.sptrans.com.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_BILH_RENOV": {
-  "texto": "Ok, você quer saber sobre 'Renovação do Bilhete de Transporte'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para renovar seu bilhete, acesse o site da SPTrans. A renovação precisa ser feita a cada 6 meses, caso contrário o bilhete não funciona."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Renovar no site da SPTrans",
-      "url": "https://estudante.sptrans.com.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_INF": {
-  "texto": "Ok, você quer saber sobre 'Informe de Pagamentos / Nota Fiscal'.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para ver suas declarações de pagamento, entre no Aluno Online → Financeiro → Declaração de Pagamentos (Ano atual/Anterior)."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Aluno Online",
-      "url": "https://aluno-online-sp.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"FIN_OUT": {
-  "texto": "Ok, você quer saber sobre outras solicitações financeiras.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para outras solicitações financeiras, como 'Alteração de Responsável Financeiro' e 'Negociação de Inadimplência', entre no Portal de Serviços → Solicitações Financeiras."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou gostaria de um atendimento, selecione a opção 'Falar com a secretaria' que irei te encaminhar."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"ACA_CALEND": {
-  "texto": "Ok, para qual ano você deseja visualizar o calendário?",
-  "opcoes": [
-    ["Calendário 2022", "ACA_CALEND_2022"],
-    ["Calendário 2023", "ACA_CALEND_2023"],
-    ["Calendário 2024", "ACA_CALEND_2024"],
-    ["Calendário 2025", "ACA_CALEND_2025"],
-    ["Calendário 2026", "ACA_CALEND_2026"]
-  ]
-},
-
-"ACA_CALEND_2022": {
-  "texto": "Calendário 2022 (Diurno e Noturno).",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2022 - Diurno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/calendario_escolar_geral_2022_2.pdf"
-    },
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2022 - Noturno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/2022_ae_veterano_noturno_intranet_vr_6.pdf"
-    }
-  ]
-},
-
-"ACA_CALEND_2023": {
-  "texto": "Calendário 2023 (Diurno e Noturno).",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2023 - Diurno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario_escolar_geral_2023.pdf"
-    },
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2023 - Noturno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/ae-ingressante-noturno-versao-3.5-intranet.pdf"
-    }
-  ]
-},
-
-"ACA_CALEND_2024": {
-  "texto": "Calendário 2024 (Diurno e Noturno).",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2024 - Diurno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario-escolar-2024.pdf"
-    },
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2024 - Noturno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/AE/CALENDARIOS/2025/ae-veternano-noturno-intranet-vr-8.pdf"
-    }
-  ]
-},
-
-"ACA_CALEND_2025": {
-  "texto": "Calendário 2025 (Diurno e Noturno).",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2025 - Diurno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario-escolar-geral-2025_alterado-em-10.02.25.pdf"
-    },
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2025 - Noturno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/AE/CALENDARIOS/2025/ae-veternano-noturno-intranet-vr-8.pdf"
-    }
-  ]
-},
-
-"ACA_CALEND_2026": {
-  "texto": "Calendário 2026 (Diurno e Noturno).",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2026 - Diurno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/EAESP/CALENDARIO%20ESCOLAR/calendario-escolar-geral-2026_alterado-em-24.09.25.pdf"
-    },
-    {
-      "tipo": "link",
-      "titulo": "Calendário 2026 - Noturno",
-      "url": "https://intra-eaesp.fgv.br/sites/default/files/AE/CALENDARIOS/2026/ae-veterano-noturno-2026-vr0.pdf"
-    }
-  ]
-},
-
-"ACA_SEGCHAM": {
-  "texto": "Ok, você quer saber sobre Prova de Segunda Chamada.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para solicitar prova de segunda chamada, acesse o Portal de Serviços → Prova de Segunda Chamada. O requerimento fica disponível apenas por um período, geralmente informado por e-mail."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "O serviço por falta de comparecimento é pago (R$ 150,00). Já o serviço por conflito de horário (ou mais de duas provas no mesmo dia) segue regras específicas descritas no Portal."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Portal de Serviços",
-      "url": "https://servicosacad.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"ACA_REAVAL": {
-  "texto": "Ok, você quer saber sobre Prova Reaval.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para fazer a Prova Reaval, o aluno precisa ter concluído a matéria com média entre 5,00 e 5,99. Só é possível fazer Reaval de uma matéria por semestre."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar formulário direto (Reaval)",
-      "url": "https://formularioopcoes.fgv.br/"
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar via Aluno Online",
-      "url": "https://aluno-online-sp.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "O requerimento fica disponível apenas por um período, informado por e-mail. A coordenadoria envia notificações com datas, prazos e instruções."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"ACA_ENTID": {
-  "texto": "As entidades são instituições estudantis formadas e geridas pelos alunos da FGV, com diversos escopos. Um aluno pode participar de até 2 entidades e 1 representativa. Entidades podem ser Empresa Júnior, Consultoria, Liga ou Grupo de Estudos; as representativas incluem Diretório Acadêmico (DA), Atlética e APA (Amor Preto e Amarelo). Sobre qual entidade você quer saber mais?",
-  "opcoes": [
-    ["GV Code", "ENT_GVCODE"],
-    ["Associação Atlética Acadêmica Getulio Vargas (AAAGV)", "ENT_ATLETICA"],
-    ["Agroliga FGV", "ENT_AGROLIGA"],
-    ["CJE FGV", "ENT_CJE"],
-    ["Consultoria de Marketing (CMKT)", "ENT_CMKT"],
-    ["Conexão Social", "ENT_CONEXAO"],
-    ["Consultoria Júnior Pública (CJP)", "ENT_CJP"],
-    ["Consultoria RH Júnior", "ENT_RHJR"],
-    ["Cursinho FGV", "ENT_CURSINHO"],
-    ["Diretório Acadêmico Getulio Vargas (DAGV)", "ENT_DAGV"],
-    ["Empresa Júnior FGV (EJFGV)", "ENT_EJFGV"],
-    ["Estudos de Política em Pauta (EPEP)", "ENT_EPEP"],
-    ["FGV Finance", "ENT_FINANCE"],
-    ["FGV Quant", "ENT_QUANT"],
-    ["FGV Tech", "ENT_TECH"],
-    ["Gazeta Vargas", "ENT_GAZETA"],
-    ["Grupo Acadêmico de Interesse Ambiental (GAIA)", "ENT_GAIA"],
-    ["FGV Crypto", "ENT_CRYPTO"],
-    ["Liga de Negócios de Moda", "ENT_MODA"],
-    ["Liga de Empreendedorismo FGV", "ENT_EMPREEN"],
-    ["Liga de Gestão Esportiva (LiGE)", "ENT_LIGE"],
-    ["Liga de Logística FGV", "ENT_LOG"],
-    ["Liga de Music Business", "ENT_MUSIC"]
-  ]
-},
-
-"ACA_SYLL": {
-  "texto": "Ok, você quer saber sobre Syllabus de matérias.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Para ver os Syllabus das matérias, acesse a Intranet → Cursos de Graduação → Administração de Empresas → Matrículas e Disciplinas."
-    },
-    {
-      "tipo": "link",
-      "titulo": "Acessar Intranet",
-      "url": "https://intra-eaesp.fgv.br/"
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"ACA_TCC": {
-  "texto": "Ok, você quer saber sobre TCC (Trabalho de Conclusão de Curso).",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "O TCC é uma matéria obrigatória. No 7º semestre, o foco é orientação e início do projeto. No 8º semestre, o aluno desenvolve o trabalho e entrega ao final do período."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Após a entrega, o aluno apresenta e defende o TCC para uma banca de avaliadores."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"ACA_IMERSAO": {
-  "texto": "Ok, você quer saber sobre Imersão e Semana Concentrada.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "Semana Concentrada: um tópico é estudado intensivamente em poucos dias, com discussões em aula, atividades práticas e um trabalho final. Geralmente ocorre do 2º ao 4º semestre, com temas como Soft Skills, Sustentabilidade e Empreendedorismo."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Imersão: a partir do 5º semestre, o aluno pode escolher uma Imersão em determinada área. Dura uma semana, em período integral ou noturno, e a escolha é feita junto com a Matrícula de Veteranos."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-"ACA_MONIT": {
-  "texto": "Ok, você quer saber sobre Monitoria.",
-  "itens": [
-    {
-      "tipo": "nota",
-      "conteudo": "As monitorias são aulas de dúvidas específicas dadas por alunos que se destacaram na matéria."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Para saber mais sobre uma monitoria específica, entre em contato com o(a) professor(a) da disciplina; ele(a) poderá indicar o(a) monitor(a) responsável."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Para se inscrever como monitor, fique atento(a) ao seu e-mail institucional: a faculdade envia instruções de inscrição por lá."
-    },
-    {
-      "tipo": "nota",
-      "conteudo": "Caso ainda tenha dúvidas ou queira atendimento, selecione 'Falar com a secretaria'."
-    }
-  ],
-  "opcoes": [
-    ["Falar com a secretaria", "SECRETARIA"]
-  ]
-},
-
-
-"ENT_GVCODE": {
-  "texto": "A GV Code é a entidade de data science e programação da FGV.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram GV Code",
-      "url": "https://www.instagram.com/gvcode/"
-    }
-  ]
-},
-
-"ENT_ATLETICA": {
-  "texto": "A Atlética fomenta o esporte dentro da FGV e representa a escola em competições universitárias.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Atlética",
-      "url": "https://www.instagram.com/jacarefgv/"
-    }
-  ]
-},
-
-"ENT_AGROLIGA": {
-  "texto": "A Agroliga FGV fomenta o estudo e debate sobre agronegócio e desenvolvimento rural.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Agroliga",
-      "url": "https://www.instagram.com/agroligafgv/"
-    }
-  ]
-},
-
-"ENT_CJE": {
-  "texto": "A CJE FGV é a empresa júnior de mercado financeiro da FGV.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram CJE",
-      "url": "https://www.instagram.com/cjefgv/"
-    }
-  ]
-},
-
-"ENT_CMKT": {
-  "texto": "A Consultoria de Marketing presta serviços de marketing digital e planejamento estratégico.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram CMKT",
-      "url": "https://www.instagram.com/consultoriamktgv/"
-    }
-  ]
-},
-
-"ENT_CONEXAO": {
-  "texto": "A Conexão Social promove projetos de impacto social e desenvolvimento comunitário.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Conexão Social",
-      "url": "https://www.instagram.com/conexaosocial/"
-    }
-  ]
-},
-
-"ENT_CJP": {
-  "texto": "A CJP atua em consultoria estratégica com foco em impacto social no primeiro e terceiro setor.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram CJP",
-      "url": "http://instagram.com/cjpfgv/"
-    }
-  ]
-},
-
-"ENT_RHJR": {
-  "texto": "A Consultoria RH Júnior desenvolve projetos de gestão de pessoas para empresas e organizações.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram RH Jr",
-      "url": "https://www.instagram.com/consultoriarhjunior/"
-    }
-  ]
-},
-
-"ENT_CURSINHO": {
-  "texto": "O Cursinho FGV democratiza o acesso ao ensino superior preparando jovens para vestibulares.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Cursinho",
-      "url": "https://www.instagram.com/cursinhofgv/"
-    }
-  ]
-},
-
-"ENT_DAGV": {
-  "texto": "O Diretório Acadêmico representa o corpo discente e promove a integração entre os alunos da FGV.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram DAGV",
-      "url": "https://www.instagram.com/giocondavenuta/"
-    }
-  ]
-},
-
-"ENT_EJFGV": {
-  "texto": "A Empresa Júnior FGV oferece serviços de consultoria estratégica desde 1988.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram EJFGV",
-      "url": "https://www.instagram.com/ejfgv/"
-    }
-  ]
-},
-
-"ENT_EPEP": {
-  "texto": "O EPEP promove educação e debate político dentro e fora do ambiente universitário.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram EPEP",
-      "url": "https://www.instagram.com/epepfgv/"
-    }
-  ]
-},
-
-"ENT_FINANCE": {
-  "texto": "A FGV Finance é a liga de mercado financeiro, com preparação voltada ao setor.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Finance",
-      "url": "https://www.instagram.com/fgvfinance/"
-    }
-  ]
-},
-
-"ENT_QUANT": {
-  "texto": "A FGV Quant desenvolve estudos em finanças quantitativas aplicando matemática e programação.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Quant",
-      "url": "https://www.instagram.com/fgvquant/"
-    }
-  ]
-},
-
-"ENT_TECH": {
-  "texto": "A FGV Tech aprofunda a formação em tecnologia com foco em mercado e inovação.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Tech",
-      "url": "https://www.instagram.com/fgvtech/"
-    }
-  ]
-},
-
-"ENT_GAZETA": {
-  "texto": "A Gazeta Vargas é a revista estudantil oficial da FGV-SP, dando voz ao alunato há mais de 25 anos.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Gazeta Vargas",
-      "url": "https://www.instagram.com/gazetavargasfgv/"
-    }
-  ]
-},
-
-"ENT_GAIA": {
-  "texto": "O GAIA realiza projetos e estudos sobre sustentabilidade e impacto ambiental.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram GAIA",
-      "url": "https://www.instagram.com/gaia.fgv/"
-    }
-  ]
-},
-
-"ENT_CRYPTO": {
-  "texto": "A GV Crypto é a primeira entidade da América Latina focada em cripto e blockchain.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Crypto",
-      "url": "https://www.instagram.com/fgvcrypto/"
-    }
-  ]
-},
-
-"ENT_MODA": {
-  "texto": "A Liga de Negócios de Moda desenvolve estudo e capacitação na indústria de moda e cosméticos.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Moda",
-      "url": "https://www.instagram.com/lnmodafgv/"
-    }
-  ]
-},
-
-"ENT_EMPREEN": {
-  "texto": "A Liga de Empreendedorismo FGV promove desenvolvimento e criação de negócios.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Empreendedorismo",
-      "url": "https://www.instagram.com/lefgv/"
-    }
-  ]
-},
-
-"ENT_LIGE": {
-  "texto": "A Liga de Gestão Esportiva presta consultoria especializada para o universo esportivo.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram LiGE",
-      "url": "https://www.instagram.com/ligefgv/"
-    }
-  ]
-},
-
-"ENT_LOG": {
-  "texto": "A Liga de Logística FGV capacita os alunos em logística, operações e supply chain.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Logística",
-      "url": "https://www.instagram.com/ligadelogistica/"
-    }
-  ]
-},
-
-"ENT_MUSIC": {
-  "texto": "A Liga de Music Business estuda o mercado da música e a indústria criativa.",
-  "itens": [
-    {
-      "tipo": "link",
-      "titulo": "Instagram Liga Music Business",
-      "url": "https://www.instagram.com/liga.musicbusiness/"
-    }
-  ]
-},
-
+}
