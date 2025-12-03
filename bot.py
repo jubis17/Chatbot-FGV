@@ -121,7 +121,7 @@ async def qualquer_mensagem(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Aqui você decide o que fazer com mensagens depois de já ter iniciado.
         # Pode só avisar que é pra usar o menu:
         await update.message.reply_text(
-            "Use os botões do menu abaixo pra navegar 😊"
+            "Use os botões do menu abaixo pra navegar"
         )
     
 async def tratar_clique(update: Update, context: ContextTypes.DEFAULT_TYPE):
